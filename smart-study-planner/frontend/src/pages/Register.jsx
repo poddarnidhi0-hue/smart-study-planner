@@ -14,7 +14,7 @@ export default function Register({ onLogin, onGoLogin }) {
     if (form.password.length < 6) { setError('Password must be at least 6 characters.'); return; }
     setLoading(true); setError('');
     try {
-     const res = await fetch('https://smart-study-planner-backend-zdvs.onrender.com/api/auth/register', {
+      const res = await fetch('https://smart-study-planner-backend-zdvs.onrender.com/api/auth/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name: form.name, email: form.email, password: form.password }),
