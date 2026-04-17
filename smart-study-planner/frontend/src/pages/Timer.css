@@ -1,0 +1,92 @@
+.timer-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.timer-label-top {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+
+.mode-pills-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.mode-pill {
+  padding: 7px 20px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  font-family: 'DM Sans', sans-serif;
+  transition: all 0.2s;
+}
+
+.mode-pill:hover { color: var(--text); border-color: var(--dimmer); }
+
+.mode-pill.active {
+  background: var(--amber-glow);
+  color: var(--amber);
+  border-color: rgba(232,166,48,0.3);
+}
+
+/* Ring */
+.timer-ring-wrap {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin-bottom: 36px;
+}
+
+.timer-display {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'DM Mono', monospace;
+  font-size: 2.8rem;
+  color: var(--amber);
+  text-shadow: 0 0 40px rgba(232,166,48,0.3);
+  letter-spacing: 0.04em;
+}
+
+/* Controls */
+.timer-controls {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 36px;
+}
+
+.timer-main-btn { padding: 10px 32px; font-size: 1rem; }
+
+/* Sessions */
+.sessions-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.session-dot {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--border);
+  transition: background 0.3s;
+}
+
+.session-dot.done { background: var(--amber); }
+
+.session-hint {
+  color: var(--muted);
+  font-size: 0.82rem;
+}

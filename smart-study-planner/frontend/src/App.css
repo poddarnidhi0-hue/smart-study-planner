@@ -1,0 +1,10 @@
+.app {
+  display: grid;
+  grid-template-columns: 260px 1fr 300px;
+  min-height: calc(100vh - 65px);
+}
+
+.main-content {
+  padding: 32px 36px;
+  overflow-y: auto;
+}

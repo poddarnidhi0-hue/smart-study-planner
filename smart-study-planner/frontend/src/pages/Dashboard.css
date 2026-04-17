@@ -1,0 +1,119 @@
+.greeting { margin-bottom: 28px; }
+
+.greeting h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 6px;
+}
+
+.greeting p { color: var(--muted); font-size: 0.9rem; }
+.greeting p span { color: var(--amber); font-weight: 500; }
+
+/* Stats */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.stat-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 60px; height: 60px;
+  background: var(--amber-glow);
+  border-radius: 0 12px 0 60px;
+}
+
+.stat-label {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.stat-value {
+  font-family: 'DM Mono', monospace;
+  font-size: 2rem;
+  color: var(--amber);
+  font-weight: 500;
+}
+
+.stat-sub { font-size: 0.8rem; color: var(--muted); margin-top: 4px; }
+
+/* Progress Ring */
+.progress-ring-wrap {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 28px;
+}
+
+.ring-container {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.ring-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'DM Mono', monospace;
+}
+
+.ring-pct { font-size: 1.5rem; color: var(--amber); }
+.ring-sub-label { font-size: 0.65rem; color: var(--muted); }
+
+.ring-info h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.ring-info p { color: var(--muted); font-size: 0.85rem; line-height: 1.6; }
+
+/* Section */
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.btn.sm { font-size: 0.8rem; padding: 6px 14px; }
+
+.task-list { display: flex; flex-direction: column; gap: 8px; }
+
+.empty-state {
+  text-align: center;
+  padding: 40px;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+.empty-state .icon { font-size: 2.5rem; margin-bottom: 12px; }

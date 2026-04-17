@@ -1,0 +1,45 @@
+version: '3.9'
+
+services:
+
+  # ── MongoDB ─────────────────────────────────────────────
+  mongodb:
+    image: mongo:7.0
+    container_name: studyplanner-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    environment:
+      MONGO_INITDB_DATABASE: studyplanner
+
+  # ── Spring Boot Backend ──────────────────────────────────
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: studyplanner-backend
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATA_MONGODB_URI: mongodb://mongodb:27017/studyplanner
+      APP_CORS_ALLOWED_ORIGINS: http://localhost:3000
+    depends_on:
+      - mongodb
+
+  # ── React Frontend ───────────────────────────────────────
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: studyplanner-frontend
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+volumes:
+  mongo-data:
