@@ -23,10 +23,8 @@ export default function Register({ onLogin, onGoLogin }) {
       if (!res.ok) { setError(data.message || 'Registration failed'); return; }
       localStorage.setItem('sp_user', JSON.stringify(data));
       onLogin(data);
-    } catch {
-      const demoUser = { id: 'demo', name: form.name, email: form.email, token: 'demo' };
-      localStorage.setItem('sp_user', JSON.stringify(demoUser));
-      onLogin(demoUser);
+    } catch (err) {
+      setError('Cannot connect to server: ' + err.message);
     } finally { setLoading(false); }
   };
 
